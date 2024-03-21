@@ -1,5 +1,5 @@
 // Require the necessary discord.js classes
-const { token } = require('./config.json');
+require('dotenv').config()
 const fs = require('node:fs');
 const path = require('node:path');
 const { Client, Collection, Events, GatewayIntentBits } = require('discord.js');
@@ -60,4 +60,4 @@ client.on(Events.InteractionCreate, async interaction => {
 });
 
 // Log in to Discord with your client's token
-client.login(token);
+client.login(process.env.TOKEN);
